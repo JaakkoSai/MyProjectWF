@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .row.banner
+    .col-12
+      h1 Login to Drink Order
+  .row
+    .col-12.col-md-8
+      form(action="/login", method="post", role="form")
+        .form-group.row
+          label.col-10.col-sm-2.col-form-label(for="email") Email
+          .col-12.col-sm-10
+            input#email.form-control(type="email", name="email", placeholder="Enter email")
+        .form-group.row
+          label.col-10.col-sm-2.col-form-label(for="password") Password
+          .col-12.col-sm-10
+            input#password.form-control(type="password", name="password", placeholder="Enter password")
+        button.btn.btn-primary.float-right(type="submit") Login
+    .col-12.col-md-4
+      p.lead Not registered yet? 
+        a(href="/register") Sign up here!

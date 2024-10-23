@@ -11,19 +11,23 @@ html
       .container
         button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarMain')
           span.navbar-toggler-icon
-        a.navbar-brand(href='/ ') Loc8r
+        a.navbar-brand(href='/ ') DrinkOrder
         #navbarMain.navbar-collapse.collapse
           ul.navbar-nav.mr-auto
             li.nav-item
-              a.nav-link(href='/about/') About 
+              a.nav-link(href='/') Home
+            li.nav-item
+              a.nav-link(href='/about') About
+            li.nav-item
+              a.nav-link(href='/login') Login
+            li.nav-item
+              a.nav-link(href='/register') Register
     .container
       block content
       footer
         .row
           .col-12
-            small &copy; Simon Holmes 2017
+            small &copy; DrinkOrder 2024
     script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js')
     script(src='/javascripts/bootstrap.min.js')
-
-

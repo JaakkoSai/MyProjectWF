@@ -3,7 +3,7 @@
 body {
   font-family: "Cabin", Arial, sans-serif;
   color: #ffffff;
-  background-color: #108a93;
+  background-color: #212121;
 }
 
 h1,
@@ -16,17 +16,18 @@ h6 {
 }
 
 .navbar {
-  background-color: #ad1d28;
-  border-color: #911821;
+  background-color: #333333;
+  border-color: #111111;
 }
 
 .navbar-brand {
   font-family: "Lobster", cursive;
+  color: #ffffff;
 }
 
 .banner {
   margin-top: 4em;
-  border-bottom: 1px solid #469ea8;
+  border-bottom: 1px solid #666666;
   margin-bottom: 1.5em;
   padding-bottom: 0.5em;
 }
@@ -36,16 +37,16 @@ h1 small {
 }
 
 .card {
-  background-color: #469ea8;
+  background-color: #424242;
 }
 
 .card-primary {
-  border-color: #a2ced3;
+  border-color: #666666;
   margin-bottom: 1rem;
 }
 
 .review-header {
-  background-color: #31727a;
+  background-color: #2e2e2e;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-bottom: 0.5em;
@@ -59,8 +60,8 @@ h1 small {
 
 .badge-default,
 .btn-primary {
-  background-color: #ad1d28;
-  border-color: #911821;
+  background-color: #555555;
+  border-color: #333333;
 }
 
 h4 a,
@@ -84,4 +85,16 @@ h4 small {
 
 legend {
   font-family: "Lobster", cursive;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 15px;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-size: 1.1rem;
 }
