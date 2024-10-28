@@ -98,3 +98,28 @@ legend {
 .nav-link {
   font-size: 1.1rem;
 }
+.card-primary {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.rating {
+  margin-bottom: 1rem;
+}
+
+.badge-warning {
+  margin-right: 0.5rem;
+}
+
+.review-header {
+  margin-bottom: 1rem;
+}
+
+.location-map img {
+  max-width: 100%;
+  height: auto;
+}
+
+.lead {
+  margin-top: 1.5rem;
+}
