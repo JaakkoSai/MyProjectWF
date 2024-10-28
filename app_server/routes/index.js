@@ -14,9 +14,6 @@ router.get("/order", ctrlOrders.orderDetails);
 router.get("/login", ctrlUsers.showLogin);
 router.get("/register", ctrlUsers.showRegister);
 
-/* Other pages */
-router.get("/about", ctrlOthers.about);
-
 /* Info pages */
 router.get(
   "/bar/:slug",
