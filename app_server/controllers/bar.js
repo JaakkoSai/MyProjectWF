@@ -1,30 +1,47 @@
 const mongoose = require("mongoose");
 const Bar = mongoose.model("Bar");
+const request = require("request");
 
-const barInfo = async function (req, res) {
-  try {
-    console.log(`Searching for bar with slug: ${req.params.slug}`); // Debug slug
-    const bar = await Bar.findOne({ slug: req.params.slug }).exec();
-    if (!bar) {
-      console.log("Bar not found!"); // Log if the bar is not found
-      return res
-        .status(404)
-        .render("error", { message: "Bar not found", error: { status: 404 } });
+const apiOptions = {
+  server: "http://localhost:3000",
+};
+
+if (process.env.NODE_ENV === "production") {
+  apiOptions.server = "https://drinkprojectwf.onrender.com";
+}
+
+const barInfo = function (req, res) {
+  const path = `/api/bars/${req.params.slug}`;
+  const requestOptions = {
+    url: apiOptions.server + path,
+    method: "GET",
+    json: {},
+  };
+
+  request(requestOptions, (err, response, body) => {
+    if (err) {
+      console.error(err);
+      res.render("error", { message: "API error", error: err });
+    } else if (response.statusCode === 200) {
+      // Ensure all review dates are converted to Date objects
+      if (body.reviews && Array.isArray(body.reviews)) {
+        body.reviews = body.reviews.map((review) => {
+          return {
+            ...review,
+            createdOn: new Date(review.createdOn), // Convert string to Date
+          };
+        });
+      }
+
+      res.render("bar-info", {
+        title: body.name,
+        bar: body,
+        googleMapsApiKey: process.env.GOOGLEMAPS_URI,
+      });
+    } else {
+      res.render("error", { message: "API error", error: response.body });
     }
-
-    console.log(`Found bar: ${bar.name}`); // Log if the bar is found
-    res.render("bar-info", {
-      title: bar.name,
-      bar,
-      googleMapsApiKey: process.env.GOOGLEMAPS_URI,
-    });
-  } catch (err) {
-    console.error(`Error while fetching bar: ${err}`); // Log any errors
-    res.status(500).render("error", {
-      message: "An error occurred",
-      error: { status: 500, stack: err.stack },
-    });
-  }
+  });
 };
 
 module.exports = {

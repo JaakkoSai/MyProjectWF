@@ -19,5 +19,6 @@ mongoose.connection.on("disconnected", () => {
 });
 
 // Import models (make sure the paths are correct)
-require("./bar"); // Ensure this is the correct path
-require("./orders");
+require("../../app_api/models/bar"); // Ensure this is the correct path
+require("../../app_api/models/orders");
+require("../../app_api/models/user");

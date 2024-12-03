@@ -6,7 +6,4 @@ const showRegister = function (req, res) {
   res.render("register", { title: "Register for Drink Order" });
 };
 
-module.exports = {
-  showLogin,
-  showRegister,
-};
+module.exports = { showLogin, showRegister };
