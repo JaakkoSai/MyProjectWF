@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let order of orders">
+    {{ order.user }} ordered at {{ order.bar }} for ${{ order.total }} on
+    {{ order.orderDate }}
+  </li>
+</ul>

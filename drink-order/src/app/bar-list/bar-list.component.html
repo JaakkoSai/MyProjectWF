@@ -1,0 +1,7 @@
+<div *ngFor="let bar of bars" class="card">
+  <div class="card-block">
+    <h4>{{ bar.name }}</h4>
+    <p>{{ bar.address }}</p>
+    <p *ngFor="let facility of bar.facilities">{{ facility }}</p>
+  </div>
+</div>
