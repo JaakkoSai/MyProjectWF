@@ -4,20 +4,16 @@ block content
   .row.banner
     .col-12
       h1= pageHeader.title
-        small &nbsp;#{pageHeader.strapline}
+      small &nbsp;#{pageHeader.strapline}
 
   .row
     .col-12.col-md-8
-      each order in orders
-        .card
-          .card-block
-            h4
-              a(href=`/bar/${order.slug}`)= order.bar
-            p Order Total: #{order.total}
-            p Date: #{order.date}
-            ul
-              each drink in order.drinks
-                li= drink.name
+      app-bar-list Loading...
 
     .col-12.col-md-4
       p.lead Looking to order drinks from local bars? View your past orders here and relive the experience!
+
+block scripts
+  script(src='/build/browser/polyfills-FFHMD2TL.js')
+  script(src='/build/browser/main-LJVYAIG7.js')
+
